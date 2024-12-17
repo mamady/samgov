@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_17_031824) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_17_034242) do
+  create_table "naics_codes", force: :cascade do |t|
+    t.string "naics_code", null: false
+    t.text "naics_description", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["naics_code"], name: "index_naics_codes_on_naics_code", unique: true
+  end
+
   create_table "opportunities", force: :cascade do |t|
     t.string "noticeId", null: false
     t.string "title"
