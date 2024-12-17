@@ -4,7 +4,7 @@ namespace :sam_gov do
     require 'httparty'
     require 'date'
 
-    api_key = ENV['SAM_GOV_API_KEY'] || '7vdUE77yDko0fi3xa2pVQcdxWdfKhtQzhYu1USIl'
+    api_key = ENV['SAM_GOV_API_KEY']
     
     # Format dates for the API
     posted_from = Date.today.beginning_of_year.strftime('%m/%d/%Y')
@@ -14,7 +14,7 @@ namespace :sam_gov do
     
     begin
       response = HTTParty.get(url, query: {
-        limit: 10,
+        limit: 1000,
         api_key: api_key,
         postedFrom: posted_from,
         postedTo: posted_to,

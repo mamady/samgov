@@ -4,6 +4,7 @@
   <table class="table table-striped table-bordered">
     <thead class="thead-dark">
       <tr>
+        <th>ID</th>
         <th>Notice ID</th>
         <th>Title</th>
         <th>Solicitation Number</th>
@@ -18,6 +19,7 @@
     <tbody>
       <% @opportunities.each do |opportunity| %>
         <tr>
+          <td><%= opportunity.id %></td>
           <td><%= opportunity.noticeId %></td>
           <td><%= opportunity.title %></td>
           <td><%= opportunity.solicitationNumber %></td>
