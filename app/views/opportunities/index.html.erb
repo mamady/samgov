@@ -1,0 +1,38 @@
+<h1>SAM.gov Opportunities</h1>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th>Notice ID</th>
+        <th>Title</th>
+        <th>Solicitation Number</th>
+        <th>Posted Date</th>
+        <th>Type</th>
+        <th>NAICS Code</th>
+        <th>NAICS Description</th>
+        <th>Classification Code</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @opportunities.each do |opportunity| %>
+        <tr>
+          <td><%= opportunity.noticeId %></td>
+          <td><%= opportunity.title %></td>
+          <td><%= opportunity.solicitationNumber %></td>
+          <td><%= opportunity.postedDate&.strftime('%Y-%m-%d') %></td>
+          <td><%= opportunity.opportunity_type %></td>
+          <td><%= opportunity.naicsCode %></td>
+          <td><%= opportunity.naics_code&.naics_description %></td>
+          <td><%= opportunity.classificationCode %></td>
+          <td><%= opportunity.active? ? 'Active' : 'Inactive' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="mt-4">
+  <p>Total Opportunities: <%= @opportunities.count %></p>
+</div>
