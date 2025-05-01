@@ -5,7 +5,7 @@ gem "rails", "8.0.1"
 gem "sprockets-rails"
 
 # Use Bootstrap for styling
-gem "bootstrap", "~> 5.3.2"
+gem "bootstrap", "~> 5.3.5"
 gem "sassc-rails"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3"
